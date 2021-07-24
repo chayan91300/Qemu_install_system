@@ -14,3 +14,9 @@ sudo qemu-system-x86_64 -m 2048 -smp 2 -netdev user,id=network0 -device rtl8139,
 ```
 * Clé USB : /dev/sdX
 * ISO du systme : System.iso
+
+## Tester le système
+
+```Bash
+sudo qemu-system-x86_64 -m 2048 -smp 2,sockets=1,maxcpus=2 -netdev user,id=network0 -device rtl8139,netdev=network0 -hda /dev/sdc -boot c
+```
